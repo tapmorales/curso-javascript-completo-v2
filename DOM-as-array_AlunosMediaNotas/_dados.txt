@@ -1,3 +1,5 @@
+#primeira versão
+
 const alunos = [
                 { nome: "Daniel", n1: 10, n2: 3, n3: 7.5, n4: 3 },
                 { nome: "Maria", n1: 10, n2: 9, n3: 3, n4: 9.5 },
@@ -9,4 +11,4 @@ const alunos = [
                 { nome: "Luana", n1: 3, n2: 7, n3: 9, n4: 3 },
                 { nome: "Beatriz", n1: 10, n2: 4, n3: 7, n4: 9 },
                 { nome: "Sergio", n1: 4.5, n2: 9.5, n3: 10, n4: 2 }
-            ];
+];
