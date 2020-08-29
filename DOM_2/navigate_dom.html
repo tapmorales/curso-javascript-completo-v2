@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>teste DOM</h1>
+
+    <div class="container">
+        <p>teste 1</p>
+        <p>lorem <a href="#"> link </a> jkasbkjask djas </p>
+        <p>teste 2</p>
+
+        <h2>Lista</h2>
+        <ul>
+            <li>item 1</li>
+            <li>item 2
+                <ul>
+                    <li>item 2.a</li>
+                    <li>item 2.b</li>
+                    <li>item 2.c</li>
+                    <li>
+                        <!-- asdasd  -->
+                    </li>
+                </ul>
+            </li>
+            <li>item <a href="#">link</a></li>
+        </ul>
+    </div>
+    <script>
+
+        console.log(document.body)
+        console.log(document.body.parentElement)
+        console.log(document.body.parentNode)
+        const html = document.body.parentElement
+
+        console.log(document.body.parentElement === document.body.parentNode)
+
+        console.log(html.parentElement)
+        console.log(html.parentNode)
+
+        const h2 = document.querySelector("h2")
+        const h2nextSibling = h2.nextElementSibling
+        h2nextSibling.style.background = "yellow"
+
+        console.log(h2.previousElementSibling)
+
+        const link = document.querySelector("a")
+        const list = document.querySelector("ul ul")
+
+        console.log(link)
+
+        console.log(link.parentElement.lastChild)
+        console.log(link.parentElement.lastElementChild)
+
+        console.log(list.lastElementChild.hasChildNodes())
+        console.log(list.lastElementChild.childNodes[1].nodeType)
+
+        /*
+
+
+hasChildNodes()
+        */
+    </script>
+</body>
+
+</html>

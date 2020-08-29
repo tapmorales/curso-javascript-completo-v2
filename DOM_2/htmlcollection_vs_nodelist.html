@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+    </div>
+
+    <script>
+        const nodelist = document.querySelectorAll("#list li")
+        const collection = document.getElementById("list").getElementsByTagName("li")
+
+        console.log(nodelist)
+        console.log(collection)
+
+        document.querySelector("#list").innerHTML += "<li> Item 6 </li>"
+
+        console.log(nodelist)
+        console.log(collection)
+
+        document.getElementById("list").innerHTML += "<li> Item 7 </li>"
+
+        console.log(nodelist)
+        console.log(collection)
+
+        document.getElementById("list").innerHTML = ""
+
+        console.log(nodelist)
+        console.log(collection)
+
+
+    </script>
+</body>
+
+</html>

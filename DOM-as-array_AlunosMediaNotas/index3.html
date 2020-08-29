@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+        .underlined {
+            border-bottom: 3px solid currentColor;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="hero center card-panel materialize-red darken-4 white-text z-depth-3">
+            <h1 class="materialize-red-text text-lighten-3"> Curso Javascript Completo</h1>
+
+        </div>
+        <h2 class="materialize-red-text text-lighten-2 underlined">Dados de Alunos</h2>
+
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th aluno-nota="n1">Nota 1</th>
+                    <th aluno-nota="n2">Nota 2</th>
+                    <th aluno-nota="n3">Nota 3</th>
+                    <th aluno-nota="n4">Nota 4</th>
+                    <th aluno-nota="media">Média</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    <script src="js/calc.js"></script>
+    <script>
+
+
+        (function () {
+            const alunos = [
+                { nome: "Daniel", n1: 10, n2: 3, n3: 7.5, n4: 3 },
+                { nome: "Maria", n1: 10, n2: 9, n3: 3, n4: 9.5 },
+                { nome: "João", n1: 10, n2: 4.5, n3: 1, n4: 3.5 },
+                { nome: "Joana", n1: 1, n2: 3, n3: 9, n4: 1.5 },
+                { nome: "José", n1: 10, n2: 4.5, n3: 7, n4: 3 },
+                { nome: "Arnaldo", n1: 10, n2: 4.5, n3: 7, n4: 3 },
+                { nome: "Lucas", n1: 4.5, n2: 9, n3: 8, n4: 3 },
+                { nome: "Luana", n1: 3, n2: 7, n3: 9, n4: 3 },
+                { nome: "Beatriz", n1: 10, n2: 4, n3: 7, n4: 9 },
+                { nome: "Sergio", n1: 4.5, n2: 9.5, n3: 10, n4: 2 }
+            ];
+
+            alunos.forEach(aluno => {
+                aluno.media = avarege(aluno.n1, aluno.n2, aluno.n3, aluno.n4)
+            })
+
+            const html = alunos.map(aluno => `
+                <tr>
+                    <td>${aluno.nome}</td>
+                    <td>${aluno.n1}</td>
+                    <td>${aluno.n2}</td>
+                    <td>${aluno.n3}</td>
+                    <td>${aluno.n4}</td>
+                    <td>${aluno.media}</td>
+                </tr>
+            `).join("")
+
+            document.querySelector("tbody").innerHTML = html
+
+            console.log(html)
+        })()
+    </script>
+
+</body>
+
+</html>

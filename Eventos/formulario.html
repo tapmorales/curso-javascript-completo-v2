@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/formulario.css">
+
+</head>
+
+<body>
+
+    <div class="formCadastro__app">
+
+        <div class="formCadastro__container">
+            <h1 class="heading">Cadastre uma tarefa</h1>
+
+            <form action="#" class="formCadastro" id="shopping-add">
+                <label for="txtTitulo">
+                    Título
+                </label>
+                <input id="txtTitulo" type="text" name="txtTitulo">
+
+                <label for="txtDescricao">
+                    Descrição da tarefa
+                </label>
+                <textarea id="txtDescricao" rows="5" maxlength="255"></textarea>
+                <div id="contador" style="display: none;"> <span></span> caracteres</div>
+
+                <label>
+                    <input type="checkbox" name="" id="chkAceito">
+                    Comprometo-me a entregar esta tarefa o quanto antes
+                </label>
+
+                <input id="btn" type="submit" value="Adicionar">
+
+            </form>
+        </div>
+
+        <div id="feedbackMessage">
+            <p>aa</p>
+            <button><span class="fa fa-close"></span></button>
+
+        </div>
+
+
+
+    </div>
+
+    <script src="js/formulario.js"></script>
+
+</body>
+
+</html>

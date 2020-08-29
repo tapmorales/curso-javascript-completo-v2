@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Teste BOM - curso javascript</h1>
+
+    <a href="history.html">Vai para History.html</a>
+
+    <button>abre com metodo open</button>
+
+    <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2020/02/seo-javascript-the-good-the-bad-the-uncertainty-5e4a09b3cd5db.png"
+        alt="javascript">
+    <hr>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque esse unde? Maiores rerum pariatur a
+        quis distinctio saepe harum dignissimos iste illo fugiat maxime doloremque voluptatum, ullam sit repellat?</p>
+
+    <script>
+
+        let teste = "variavel de introducao.html"
+
+        function teste2() {
+            console.log("teste2 chamado")
+        }
+
+        console.log(opener)
+
+        document.querySelector("button").addEventListener("click", function () {
+            window.open("history.html", "nome-janela", "width=600,height=300")
+        })
+
+        window.addEventListener("load", function () {
+            console.log("load")
+        })
+        window.addEventListener("DOMContentLoaded", function () {
+            console.log("DOMContentLoaded")
+        })
+
+        window.addEventListener("resize", function () {
+            console.log("resize", innerWidth, innerHeight)
+        })
+
+        window.addEventListener("scroll", function () {
+            console.log("scroll", pageYOffset)
+        })
+
+        window.addEventListener("unload", function () {
+            console.log("unload")
+            debugger
+            alert("unload")
+        })
+
+        window.addEventListener("beforeunload", function () {
+            console.log("beforeunload")
+            debugger
+            alert("beforeunload")
+        })
+
+
+    </script>
+
+</body>
+
+</html>

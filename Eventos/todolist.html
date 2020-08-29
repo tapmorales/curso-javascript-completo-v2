@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/todolist.css">
+
+
+</head>
+
+<body>
+
+    <div class="todo-list__app">
+
+        <div class="todo-add-item__container">
+            <h1 class="heading">todo List</h1>
+            <form action="#" class="todo-add-item" id="todo-add">
+                <input class="inputItem" id="item-input" type="text" name="text" placeholder="New Item">
+                <input id="add-item" type="submit" value="Add">
+            </form>
+        </div>
+
+        <div class="todo-list__container">
+            <ul id="todo-list">
+
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- <li class="todo-item">
+        <button class="button-check">
+            <i class="fas fa-check displayNone"></i>
+        </button>
+        <p class="task-name">Example</p>
+        <i class="fas fa-edit"></i>
+        <div class="editContainer">
+            <input class="editInput" type="text">
+            <button class="editButton">Edit</button>
+            <button class="cancelButton">Cancel</button>
+        </div>
+        <i class="fas fa-trash-alt"></i>
+
+    </li> -->
+
+
+    <script src="js/todolist.js"></script>
+</body>
+
+</html>

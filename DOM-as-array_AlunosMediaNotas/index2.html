@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+        .underlined {
+            border-bottom: 3px solid currentColor;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="hero center card-panel materialize-red darken-4 white-text z-depth-3">
+            <h1 class="materialize-red-text text-lighten-3"> Curso Javascript Completo</h1>
+
+        </div>
+        <h2 class="materialize-red-text text-lighten-2 underlined">Dados de Alunos</h2>
+
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th aluno-nota="n1">Nota 1</th>
+                    <th aluno-nota="n2">Nota 2</th>
+                    <th aluno-nota="n3">Nota 3</th>
+                    <th aluno-nota="n4">Nota 4</th>
+                    <th aluno-nota="media">Média</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Daniel</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>7.5</td>
+                    <td>3</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Maria</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>9.5</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>João</td>
+                    <td>10</td>
+                    <td>4.5</td>
+                    <td>1</td>
+                    <td>3.5</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Joana</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>9</td>
+                    <td>1.5</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>José</td>
+                    <td>10</td>
+                    <td>4.5</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Arnaldo</td>
+                    <td>10</td>
+                    <td>4.5</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Lucas</td>
+                    <td>4.5</td>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Luana</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Beatriz</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Sergio</td>
+                    <td>4.5</td>
+                    <td>9.5</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    <script src="js/calc.js"></script>
+    <script>
+
+
+        (function () {
+
+            const trHeader = document.querySelector("thead tr")
+            const thsHeader = trHeader.querySelectorAll("th")
+            const thsAlunoNotas = trHeader.querySelectorAll("[aluno-nota]")
+            const INDICES_NOTAS = {}
+
+            Array.from(thsAlunoNotas).forEach(function (th) {
+                let prop = th.getAttribute("aluno-nota")
+                INDICES_NOTAS[prop] = pegaIndice(prop)
+            })
+
+            function pegaIndice(indice) {
+                const th = trHeader.querySelector(`[aluno-nota="${indice}"]`)
+                const i = [...thsHeader].indexOf(th)
+                return i
+            }
+
+
+
+            console.log(INDICES_NOTAS)
+
+            const trs = document.querySelectorAll("tbody tr")
+
+            let x = 0
+            let media = 0
+
+            while (trs[x]) {
+                const tds = trs[x].querySelectorAll("td")
+
+                media = avarege(
+                    parseFloat(tds[INDICES_NOTAS.n1].textContent),
+                    parseFloat(tds[INDICES_NOTAS.n2].textContent),
+                    parseFloat(tds[INDICES_NOTAS.n3].textContent),
+                    parseFloat(tds[INDICES_NOTAS.n4].textContent)
+                )
+                x++
+
+                tds[INDICES_NOTAS.media].textContent = media
+
+            }
+
+
+        })()
+    </script>
+
+</body>
+
+</html>

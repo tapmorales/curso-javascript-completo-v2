@@ -1,0 +1,139 @@
+body{
+    font-family: arial, sans-serif;
+    background: #ccc;
+    margin: 0;
+}
+
+.hero{
+    background-image: linear-gradient(transparent, rgba(0,0,0,.6)), url(../imagens/bg-3.jpg);
+    height: 220px;
+    background-position: right center;
+    background-size: cover;
+    border-top: 1px solid transparent;
+}
+
+.hero-content{
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+#newsletterForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+#newsletterForm input,
+#newsletterForm button{
+    
+    padding: .5em;
+    border: none;
+}
+#newsletterForm button{
+    font-size: .6em;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+#newsletterForm input{
+    font-size: 1em;
+    background-color: #9f9f9f;
+}
+#newsletterForm label{
+    margin-right: .5em;
+}
+
+#newsletterForm input:focus{
+    outline: none;
+    background-color: white;
+}
+#newsletterFeedback{
+    font-size: 1.3em;
+    text-shadow: 2px 2px 1px #333;
+
+}
+#newsletterFeedback p{
+    margin: 10px;
+    display: inline-block;
+}
+
+.hero-content h1{
+    text-transform: uppercase;
+    font-size: 46px;
+    text-shadow: 3px 3px 2px #333;
+}
+.hero-content h2{
+    font-size: 2em;
+    text-shadow: 2px 2px 1px #333;
+}
+
+
+
+
+.top-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: rgba(0,0,0,.5);
+    box-sizing: border-box;
+}
+.top-bar p{
+margin: 0;
+text-align: right;
+}
+
+main{
+    width: 80%;
+    margin: auto;
+}
+
+.content-section{
+    background-color: white;
+    padding: 10px;
+    margin-top: 15px;
+    overflow: auto;
+}
+
+.card{
+    width: 32%;
+    float: left;
+    box-sizing: border-box;
+}
+.card-1, .card-2{
+    margin-right: 2%;
+}
+.card img {
+   width: 100%; 
+    display: block;
+}
+.card p{
+    background-color: #393535;
+    color: white;
+    margin: 0;
+    padding: 15px;
+}
+
+.content-header{
+    border-bottom: solid 2px #ccc;
+	padding: 10px;
+	
+	background: #eee;
+}
+.content-header h2{
+    margin:0;
+}
+
+.rodape{
+    height: 80px;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	text-shadow: 2px 2px 2px black;
+	background: #6b6c68;
+    line-height: 80px;
+}

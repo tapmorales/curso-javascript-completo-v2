@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <style type="text/css">
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        li {
+            padding: 15px;
+            margin: 10px;
+            border: dashed 2px #ddd;
+        }
+
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ccc;
+            font-family: sans-serif;
+            text-align: center;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            width: 80vw;
+            height: 80vh;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+            padding: 15px;
+        }
+
+        .container>div {
+            flex-basis: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="original">
+            <h3>Original</h3>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </div>
+
+        <div class="alvo">
+            <h3>Alvo</h3>
+            <ul>
+                <li>item 1</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+		// crie um nova li com texto "item 2" e a inclua na ul de div com class .alvo
+
+		//Mova a última li de orignal para alvo (mas antes da primeira li). 
+        //Em outras palavras, a última li da original deve virar a primeira li de alvo
+
+		//altere o texto da primeira li de .alvo para "item 0"
+
+		//clone a ul de .original e a inclua na primeira li de .alvo
+
+		//remova a ultima li (item2) da lista inserida na etapa anterior
+
+		//remova as duas li's que sobraram na ul original
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <h1 id="title1">Curso Javascript Completo</h1>
+
+    <main class="cmain" id="idmain">
+        <h2>subtitulo</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+    </main>
+
+    <form action="#">
+        <input type="text" id="txtNome" placeholder="nome"><br><br>
+        <input type="text" id="txtEmail" placeholder="email"><br><br>
+
+        <input type="checkbox" id="contrato" onchange="enableOrDisableButton()">
+        <label for="contrato">Li e aceito o seguinte contrato</label><br><br>
+        <textarea name="" id="" cols="30" rows="10" readonly>Este contrato nos dá direito à ...</textarea><br><br>
+        <input type="submit" value="cadastrar">
+    </form>
+
+    <script>
+
+        const btn = document.querySelector('form input[type="submit"]')
+        btn.disabled = true
+
+        function enableOrDisableButton() {
+            const contrato = document.querySelector("#contrato")
+
+            let checked = contrato.checked
+            console.log(checked)
+
+            // if (checked) {
+            //     btn.disabled = false
+            // } else {
+            //     btn.disabled = true
+            // }
+            btn.disabled = !checked
+        }
+
+    </script>
+
+</body>
+
+</html>

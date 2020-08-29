@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>history</h1>
+    <button id="btnBack">Volta</button>
+    <br>
+    <button id="btnForward">Avança</button>
+    <br>
+    <button id="btnClose">Fechar</button>
+
+    <a href="http://google.com">google</a>
+    <script>
+
+        console.log(opener)
+
+        if (opener) {
+            opener.teste2()
+        }
+
+        document.getElementById("btnBack").addEventListener("click", function () {
+            history.back()
+        })
+        document.getElementById("btnForward").addEventListener("click", function () {
+            history.forward()
+        })
+
+        document.getElementById("btnClose").addEventListener("click", function () {
+            close()
+        })
+
+    </script>
+</body>
+
+</html>

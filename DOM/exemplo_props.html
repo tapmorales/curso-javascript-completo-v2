@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+
+
+
+</head>
+
+<body>
+    <h1 id="title1">Curso Javascript Completo 2018</h1>
+
+    <main class="cmain" id="idmain">
+        <h2>subtitulo</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+    </main>
+
+    <form action="#">
+        <input type="text" id="txtNome" placeholder="nome"><br><br>
+        <input type="text" id="txtEmail" placeholder="email" maxlength="10" class="input input.email"><br><br>
+
+        <input type="checkbox" id="contrato">
+        <label for="contrato">Li e aceito o contrato</label><br><br>
+        <textarea name="" id="" cols="30" rows="10" readonly>
+            Este contrato ...
+        </textarea>
+    </form>
+
+    <script>
+        const txtNome = document.querySelector("#txtNome")
+        const txtEmail = document.querySelector("#txtEmail")
+        const labelContrato = document.querySelector("label[for='contrato']")
+        txtNome.value = "Daniel"
+        txtNome.disabled = true
+        console.log(txtNome.value)
+        console.log(labelContrato.htmlFor)
+        console.log(txtEmail.maxLength)
+        console.log(txtEmail.className)
+
+        txtEmail.readOnly = true
+
+
+    </script>
+
+</body>
+
+</html>
