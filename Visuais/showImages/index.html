@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+    <title> pagina de exemplo de DOM </title>
+    <meta charset="utf-8">
+    <meta name="author" content="Daniel">
+    <meta name="description" content="descrição bacanuda">
+    <meta name="keywords" content="html5, tecnologia">
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="no-js">
+
+    <div id="principal">
+        <header class="hero" data-paralax data-p-velocity="0.3">
+
+
+
+            <div class="hero-content">
+                <h1>Curso Javascript Completo</h1>
+                <p>Scroll background</p>
+            </div>
+        </header>
+
+
+
+        <main>
+
+            <section class="content-section">
+                <div class="card card-1">
+                    <img src="imagens/card_01.png" alt="" data-addclass-on-scroll="show">
+                    <p>Seletores</p>
+                </div>
+
+                <div class="card card-2">
+                    <img src="imagens/card_02.jpg" alt="" data-addclass-on-scroll="show"
+                        data-addclass-on-scroll-delay="200">
+                    <p>Posicionamento</p>
+                </div>
+
+                <div class="card card-3">
+                    <img src="imagens/card_03.jpg" alt="" data-addclass-on-scroll="show"
+                        data-addclass-on-scroll-delay="400">
+                    <p>Fontes</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="card card-1">
+                    <img src="imagens/card_03.jpg" alt="" data-addclass-on-scroll="show">
+                    <p>Seletores</p>
+                </div>
+
+                <div class="card card-2">
+                    <img src="imagens/card_01.png" alt="" data-addclass-on-scroll="show"
+                        data-addclass-on-scroll-delay="200">
+                    <p>Posicionamento</p>
+                </div>
+
+                <div class="card card-3">
+                    <img src="imagens/card_02.jpg" alt="" data-addclass-on-scroll="show"
+                        data-addclass-on-scroll-delay="400">
+                    <p>Fontes</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="card card-1">
+                    <img src="imagens/card_02.jpg" alt="" data-addclass-on-scroll="show">
+                    <p>Seletores</p>
+                </div>
+
+                <div class="card card-2">
+                    <img src="imagens/card_02.jpg" alt="" data-addclass-on-scroll="show"
+                        data-addclass-on-scroll-delay="200">
+                    <p>Posicionamento</p>
+                </div>
+
+                <div class="card card-3">
+                    <img src="imagens/card_01.png" alt="" data-addclass-on-scroll="show"
+                        data-addclass-on-scroll-delay="400">
+                    <p>Fontes</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <article>
+                    <header class="content-header">
+                        <h2>Titulo do article</h2>
+                    </header>
+                    <p>Paragrafo 1</p>
+                    <p>Paragrafo 2</p>
+                </article>
+            </section>
+
+        </main>
+
+        <footer class="rodape">
+
+            <p>Copyright &copy; 2018</p>
+
+        </footer>
+    </div>
+
+    <script src="js/paralax.js"></script>
+    <script src="js/addclass.js"></script>
+
+    <script>
+        document.body.classList.remove("no-js")
+    </script>
+</body>
+
+</html>
