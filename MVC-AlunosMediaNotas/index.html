@@ -77,18 +77,20 @@
           </div>
         </div>
       </form>
-      <table>
+      <table data-table-alunos>
         <thead>
-          <tr>
-            <td>Nome</td>
-            <td>portugues</td>
-            <td>matematica</td>
-            <td>historia</td>
-            <td>ciencias</td>
-          </tr>
-        </thead>
+          <!-- 
+            <tr>
+              <td>Nome</td>
+              <td>portugues</td>
+              <td>matematica</td>
+              <td>historia</td>
+              <td>ciencias</td>
+          </tr> 
+        --></thead>
 
         <tbody>
+          <!-- 
           <tr>
             <td>chico melato</td>
             <td>1.5</td>
@@ -102,7 +104,8 @@
             <td>4.5</td>
             <td>5.5</td>
             <td>7.75</td>
-          </tr>
+          </tr> 
+          -->
         </tbody>
       </table>
     </div>
@@ -119,7 +122,7 @@
           notas: {
             portugues: [1, 1, 2, 2],
             matematica: [2, 2, 2, 2],
-            historia: [2, 2, 3, 3],
+            historia: [5, 5, 5, 5],
             ciencias: [3, 3, 3, 3],
           },
         },
@@ -127,7 +130,7 @@
           _id: 1,
           nome: "talita lima",
           notas: {
-            portugues: [4, 4, 4, 4],
+            portugues: [10, 10, 10, 10],
             matematica: [4, 4, 5, 5],
             historia: [5, 5, 6, 6],
             ciencias: [7, 7, 8, 9],
@@ -135,5 +138,7 @@
         },
       ];
     </script>
+
+    <script src="js/app.js"></script>
   </body>
 </html>
