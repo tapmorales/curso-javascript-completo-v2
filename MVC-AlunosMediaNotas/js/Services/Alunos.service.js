@@ -13,7 +13,8 @@ class AlunosService {
     }
 
     edit(aluno) {
-        return aluno
+        aluno.generateAvarege()
+        this.updateLocalStorage()
     }
 
     searchById(id) {
