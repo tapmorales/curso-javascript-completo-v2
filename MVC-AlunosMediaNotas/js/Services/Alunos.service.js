@@ -21,6 +21,10 @@ class AlunosService {
         return this.alunos.find(aluno => aluno._id === id)
     }
 
+    search(name) {
+        return this.alunos.filter(aluno => aluno.nome.indexOf(name) >= 0)
+    }
+
     updateLocalStorage() {
         const alunos = JSON.stringify(this.alunos)
         localStorage.setItem("alunos", alunos)
