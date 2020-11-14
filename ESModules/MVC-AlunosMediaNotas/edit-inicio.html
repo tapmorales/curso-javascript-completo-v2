@@ -42,6 +42,10 @@
       .main-title {
         margin-bottom: 0;
       }
+
+      .input-field p {
+          margin: 0;
+      }
     </style>
   </head>
 
@@ -50,97 +54,98 @@
       <div
         class="hero center card-panel materialize-red darken-4 white-text z-depth-3"
       >
+      
         <h1 class="materialize-red-text text-lighten-3">
           Curso Javascript Completo
         </h1>
       </div>
-
-      <h2 class="materialize-red-text text-lighten-2 underlined main-title">
-        Dados de Alunos
-      </h2>
-
       
+      <h2 class="materialize-red-text text-lighten-2 underlined main-title">
+        Detalhe do Aluno
+      </h2>
 
       <form class="form-add">
         <div class="row">
-          <div class="input-field col s8">
+          
+          <div class="input-field col s12">
             <input
               placeholder="Digite o nome do aluno"
               id="first_name"
               type="text"
               class="validate"
             />
-            <label for="first_name" class="active">Adicionar Aluno</label>
+            <label for="first_name" class="active">Nome do Aluno</label>
+          </div>
+          <div class="input-field col s12">
+              <p>Notas por matéria</p>
           </div>
           <div class="input-field col s4">
-            <button class="btn-floating" type="submit" name="action">
-              <i class="material-icons">add</i>
+            <input
+              id="materia"
+              type="text"
+              class="validate"
+            />
+          </div>
+          <div class="input-field col s2">
+            <input
+              id="nota_materia_1"
+              type="text"
+              class="validate"
+            />
+          </div>
+          <div class="input-field col s2">
+            <input
+              id="nota_materia_2"
+              type="text"
+              class="validate"
+            />
+          </div>
+          <div class="input-field col s2">
+            <input
+              id="nota_materia_3"
+              type="text"
+              class="validate"
+            />
+          </div>
+          <div class="input-field col s2">
+            <input
+              id="nota_materia_4"
+              type="text"
+              class="validate"
+            />
+          </div>
+         
+          <div class="input-field col s12">
+            <a class="btn" href="index.html">Cancelar</a>
+            <button class="btn" type="submit" name="action">
+              Cadastrar
             </button>
           </div>
         </div>
       </form>
-
-      <div class="form-search">
-        <div class="row">
-          <div class="input-field col s8">
-            <input
-              placeholder="Digite o nome do aluno"
-              id="search_name"
-              type="text"
-              class="validate"
-            />
-            <label for="search_name" class="active">Buscar Aluno</label>
-          </div>
-          <div class="input-field col s4">
-           
-          </div>
-        </div>
-      </div>
       
-      <table data-table-alunos>
-        <thead>
-          <!-- 
-            <tr>
-              <td>Nome</td>
-              <td>portugues</td>
-              <td>matematica</td>
-              <td>historia</td>
-              <td>ciencias</td>
-          </tr> 
-        --></thead>
-
-        <tbody>
-          <!-- 
-          <tr>
-            <td>chico melato</td>
-            <td>1.5</td>
-            <td>2</td>
-            <td>2.5</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>talita lima</td>
-            <td>4</td>
-            <td>4.5</td>
-            <td>5.5</td>
-            <td>7.75</td>
-          </tr> 
-          -->
-        </tbody>
-      </table>
     </div>
 
     <!--JavaScript at end of body for optimized loading-->
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
-    
     <script src="js/calc.js"></script>
     <script src="js/Models/Aluno.model.js"></script>
     <script src="js/Services/Alunos.service.js"></script>
-    <script src="js/Services/Materias.service.js"></script>
-    <script src="js/Views/Alunos.view.js"></script>
-    <script src="js/Controllers/Alunos.controller.js"></script>
 
-    <script src="js/app.js"></script>  
 
+    <!-- <script src="js/app.js"></script> -->
+
+    <script>
+        
+        const alunosService = new AlunosService()
+
+        const paramsString = window.location.search
+        const URLparams= new URLSearchParams(paramsString)
+        const id = parseInt(URLparams.get("id"))        
+
+        const aluno = alunosService.searchById(id)
+
+        document.getElementById("first_name").value = aluno.nome
+    </script>
   </body>
 </html>

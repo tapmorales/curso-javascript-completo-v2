@@ -59,7 +59,22 @@
         Dados de Alunos
       </h2>
 
-      
+      <div class="form-search">
+        <div class="row">
+          <div class="input-field col s8">
+            <input
+              placeholder="Digite o nome do aluno"
+              id="search_name"
+              type="text"
+              class="validate"
+            />
+            <label for="search_name" class="active">Buscar Aluno</label>
+          </div>
+          <div class="input-field col s4">
+           
+          </div>
+        </div>
+      </div>
 
       <form class="form-add">
         <div class="row">
@@ -79,24 +94,6 @@
           </div>
         </div>
       </form>
-
-      <div class="form-search">
-        <div class="row">
-          <div class="input-field col s8">
-            <input
-              placeholder="Digite o nome do aluno"
-              id="search_name"
-              type="text"
-              class="validate"
-            />
-            <label for="search_name" class="active">Buscar Aluno</label>
-          </div>
-          <div class="input-field col s4">
-           
-          </div>
-        </div>
-      </div>
-      
       <table data-table-alunos>
         <thead>
           <!-- 
@@ -132,7 +129,6 @@
 
     <!--JavaScript at end of body for optimized loading-->
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
-    
     <script src="js/calc.js"></script>
     <script src="js/Models/Aluno.model.js"></script>
     <script src="js/Services/Alunos.service.js"></script>
@@ -140,7 +136,6 @@
     <script src="js/Views/Alunos.view.js"></script>
     <script src="js/Controllers/Alunos.controller.js"></script>
 
-    <script src="js/app.js"></script>  
-
+    <script src="js/app.js"></script>
   </body>
 </html>
