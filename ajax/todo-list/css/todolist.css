@@ -1,0 +1,256 @@
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
+    letter-spacing: inherit;
+}
+
+html{font-size:62.5%;}
+
+
+body{
+    font-family: 'Open Sans',sans-serif;
+    letter-spacing: .2rem;   
+    display: flex;
+}
+
+body,html{
+    height:100%;
+}
+
+ul,li{
+    list-style-type: none;
+}
+
+button{
+    cursor:pointer;
+}
+
+ion-icon{
+    font-size:18px;
+    color:rgb(77, 77, 77);
+    
+}
+
+.todo-list__app{
+   background-color:rgb(247, 247, 247);
+   border-radius: 3px;
+   box-shadow: 2px 2px 15px rgba(77, 77, 77, .5);
+   
+   min-width:37.5rem;
+   margin: auto;
+   
+}
+
+.todo-add-item__container{
+    background-color:#726a95;
+    padding: 3rem 2rem;
+    border-radius: 3px 3px 0 0;
+}
+
+.todo-add-item__container >.heading{
+    font-size:3rem;
+}
+
+.todo-add-item{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-content: center;
+
+    padding:3rem 0 1rem 0;
+}
+
+.inputItem {
+    padding: 0 1rem;
+    outline:transparent; 
+    flex-grow: 1;
+}
+
+
+.inputItem::placeholder {
+    color:#a8a8a8;
+    
+}
+
+input[type="submit"] {
+    border: none;
+    background-color: rgb(241, 198, 104);
+    padding: 1rem 3rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(245, 221, 170);
+}
+
+.todo-list__container{  
+    padding:2rem;  
+}
+
+.todo-item {
+    display:flex;
+    gap: 16px;
+    /* grid-template-columns: 1fr minmax(20rem,auto) 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: .8rem; */
+    
+    margin:0 0 2rem;
+    padding:.8rem 2rem;
+    border-radius:3px;
+    box-shadow: 2px 2px 8px rgba(77, 77, 77, .5);
+    
+    position:relative;
+}
+.todo-item:last-child{
+    margin-bottom: 0;
+}
+
+.button-check{
+    grid-column: 1/2;
+
+    align-self:center;
+    justify-self: center;
+    width:1.5rem;
+    height:1.5rem;
+    border-radius:.2rem;
+    border:2px solid #726a95;
+    position:relative;
+    outline:transparent;
+}
+
+.fa-check {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:#726a95;
+     
+}
+
+.fa-check.displayNone{
+    display:none;
+}
+
+.task-name{
+    /* grid-column: 2/3; */
+    flex: 1;
+    background-color:#f2f2f2;
+    padding:1rem;
+    font-size:1.1rem;
+}
+
+.fa-edit{
+    /* grid-column: 3/4;    */
+    /* margin-right: 16px; */
+}
+
+/*Container que abre ao clicar no icon do lapis para editar tarefa*/
+
+.editContainer{
+    position:absolute;
+    z-index: 99999;
+    top:4rem;
+    left:2rem;
+    width:120%;
+    height:6rem;
+    background-color:rgb(225, 208, 252);
+    border-radius:.4rem;
+    box-shadow: 3px 3px 15px rgba(77, 77, 77, .8);
+
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    display:none;
+}
+
+.editContainer .editInput{
+    background-color:transparent;
+    border:none;
+    border:2px solid #4b3d8a;
+    border-radius:.2rem;
+    padding:.5rem 1rem;
+}
+
+.editContainer .editInput:focus{
+    outline:none;
+}
+
+.editContainer .editButton,
+.editContainer .cancelButton {
+    border:none;
+    outline:transparent;
+    padding: .7rem 2rem;
+
+}
+.editContainer .editButton{
+    background-color: #4b3d8a;
+    color: seashell;
+}
+
+.editContainer .cancelButton{
+    background-color: #8a3d3d;
+    color: seashell;
+}
+
+.editContainer .editButton:hover {
+    background-color: #8478b9;
+    color: seashell;
+}
+.editContainer .cancelButton:hover{
+    background-color: #6f3131;
+    color: seashell;
+}
+/*FIM ---- Container que abre ao clicar no icon do lapis para editar tarefa*/
+
+.fa-trash-alt {
+    grid-column:4/-1;
+}
+
+.fa-edit,
+.fa-trash-alt{
+    outline:none;
+    border:none;
+    background-color:transparent;
+    cursor: pointer;
+    justify-self: center;
+    align-self:center;
+    font-size:1.5rem;
+   
+    
+}
+
+.fa-edit:hover,
+.fa-trash-alt:hover {
+    transform:scale(1.2,1.2);
+     outline:none;
+    border:none;
+}
+
+.fa-trash-alt {
+    color: rgb(134, 134, 134);
+}
+
+.fa-edit {
+    color:#70608f;
+}
+
+
+.fa-edit:hover {
+    color:#1a0577;
+}
+
+.fa-trash-alt:hover {
+    color:#c70039;
+}
+
+
+.fa-edit:active,
+.fa-trash-alt:active {
+    transform:scale(1,1);
+    outline:none;
+    border:none;
+}
