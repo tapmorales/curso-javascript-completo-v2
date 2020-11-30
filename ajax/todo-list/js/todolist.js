@@ -1,22 +1,33 @@
 
 import { Task } from './Model/Task.model.js'
 import { createXMLHttpRequest } from './createXMLHttpRequest.js'
+import TasksService from './Service/Tasks.service.js'
 
-const url = "https://jsonplaceholder.typicode.com/users/1/todos/"
+// const url = "https://jsonplaceholder.typicode.com/users/1/todos/"
+const urlUsers = "http://localhost:3000/users"
+const urlTasks = "http://localhost:3000/tasks"
 
-createXMLHttpRequest("GET", url, init)
+const userId = 2
+
+const taskService = new TasksService()
+
+// createXMLHttpRequest("GET", `${urlUsers}/${userId}/tasks`, init)
+taskService.getTasks(userId, init)
 
 
-function init(arrTasks) {
+function init(arrInstancesTasks) {
     // a partir de um array de objetos literais, crie um array contendo instancias de Tasks. 
     // Essa array deve chamar arrInstancesTasks
 
-    if (arrTasks.error) return
+    if (arrInstancesTasks.error) return
 
-    const arrInstancesTasks = arrTasks.map(task => {
-        const { title, completed, createdAt, updatedAt } = task
-        return new Task(title, completed, createdAt, updatedAt)
-    })
+    console.log("arrInstancesTasks")
+    console.log(arrInstancesTasks)
+
+    // const arrInstancesTasks = arrTasks.map(task => {
+    //     const { title, completed, createdAt, updatedAt } = task
+    //     return new Task(title, completed, createdAt, updatedAt)
+    // })
 
     //ARMAZENAR O DOM EM VARIAVEIS
     const itemInput = document.getElementById("item-input")
@@ -88,11 +99,21 @@ function init(arrTasks) {
         });
     }
 
-    function addTask(taskName) {
+    function addTask(title) {
         // adicione uma nova instancia de Task
+        const cb = function ({ title }) {
+            arrInstancesTasks.push(new Task(title))
+            console.log("dentro da funcao de callback")
+            renderTasks()
+        }
 
-        arrInstancesTasks.push(new Task(taskName))
-        renderTasks()
+        const taskString = JSON.stringify({ title, userId })
+
+        console.log("antes de createXMLHttpRequest")
+        createXMLHttpRequest("POST", urlTasks, cb, taskString)
+        console.log("depois de createXMLHttpRequest")
+
+
 
     }
 
@@ -148,9 +169,9 @@ function init(arrTasks) {
 
     todoAddForm.addEventListener("submit", function (e) {
         e.preventDefault()
-        console.log(itemInput.value)
+        console.log("antes de addTask")
         addTask(itemInput.value)
-        renderTasks()
+        console.log("depois de addTask")
 
         itemInput.value = ""
         itemInput.focus()
