@@ -19,8 +19,8 @@
     function getSavedData() {
         let tasksData = localStorage.getItem("tasks")
         tasksData = JSON.parse(tasksData)
-
-        return tasksData.length ? tasksData : [
+        console.log(tasksData)
+        return tasksData && tasksData.length ? tasksData : [
             {
                 name: "task 1",
                 createAt: Date.now(),

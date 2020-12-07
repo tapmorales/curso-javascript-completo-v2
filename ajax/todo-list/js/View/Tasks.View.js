@@ -17,7 +17,7 @@ function generateLiTask(obj) {
     li.appendChild(checkButton)
 
     p.className = "task-name"
-    p.textContent = obj.getTitle()
+    p.textContent = obj.title
     li.appendChild(p)
 
     editButton.className = "fas fa-edit"
@@ -30,7 +30,7 @@ function generateLiTask(obj) {
     const inputEdit = document.createElement("input")
     inputEdit.setAttribute("type", "text")
     inputEdit.className = "editInput"
-    inputEdit.value = obj.getTitle()
+    inputEdit.value = obj.title
 
     containerEdit.appendChild(inputEdit)
     const containerEditButton = document.createElement("button")
