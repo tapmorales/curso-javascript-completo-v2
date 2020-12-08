@@ -74,3 +74,26 @@ function clickedUl(e) {
 
 ul.addEventListener("click", clickedUl)
 
+// codigos de exemplo
+
+fetch("http://localhost:3000/users/")
+    .then(resposta => resposta.json())
+    .then(resposta => { console.log(resposta); console.log("finally") })
+    .catch(err => { console.log(err); console.log("finally") })
+    // .finally(() => console.log("finally"))
+
+    ; (async function () {
+        let users = []
+
+        try {
+            await fetch("http://localhost:3002/users/")
+                .then(resposta => resposta.json())
+                .then(_users => {
+                    console.log(_users)
+                    users = _users
+                })
+        } catch (e) {
+            console.log(e.message)
+        }
+        console.log(users)
+    })()
