@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="cep">
+
+    <script>
+        const regex = /^\d{5}-\d{3}$/
+
+        const elfocus = (e) => console.log("focus")
+        const elblur = (e) => {
+            const cep = e.target.value
+            console.log(isCEPValid(cep))
+        }
+
+        const el = document.getElementById("cep")
+        el.addEventListener("focus", elfocus)
+        el.addEventListener("blur", elblur)
+
+
+
+        const isCEPValid = cep => regex.test(cep)
+
+
+
+    </script>
+</body>
+
+</html>

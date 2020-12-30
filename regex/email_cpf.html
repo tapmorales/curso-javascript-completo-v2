@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="input">
+    <button id="btn">Validar</button>
+
+    <script>
+        const text = document.getElementById("input")
+        const btn = document.getElementById("btn")
+
+        const regexCPF = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/
+        const regexEmail = /^[\w.-]+@[\w.-]+\.[\w]{2,}/
+
+        text.addEventListener("input", (e) => {
+            const valor = e.target.value
+            btn.disabled = !(regexCPF.test(valor) || regexEmail.test(valor))
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

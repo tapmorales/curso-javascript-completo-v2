@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        let url = window.location.search
+
+        const regex = /[&?](\w+)=(\w+)/g
+
+        let arr;
+        const obj = {}
+
+        while (arr = regex.exec(url)) {
+            obj[arr[1]] = arr[2]
+        }
+        console.log(obj)
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
