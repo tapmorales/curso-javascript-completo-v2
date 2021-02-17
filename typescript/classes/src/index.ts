@@ -17,6 +17,12 @@ abstract class Animal {
     }
 }
 
+interface AnimalInterface {
+    categoria: string;
+    mostrarDetalhes(): void;
+    idade?: number
+}
+
 class Gato extends Animal {
     private nome: string
     constructor(nome: string) {
