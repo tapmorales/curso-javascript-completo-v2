@@ -57,3 +57,35 @@ console.log(mingal)
 
 const toto = new Cachorro("mamifero", "Toto")
 toto.latir()
+
+
+interface Pessoa {
+    name: string
+}
+
+interface Pessoa {
+    idade: number
+}
+
+const daniel: Pessoa = {
+    name: "daniel",
+    idade: 20
+}
+
+console.log(daniel)
+
+type TesteT = number | { qtd: number }
+const idade: TesteT = { qtd: 1 }
+
+type Cores = "Red" | "Green" | "Blue"
+
+const cor: Cores = "Blue"
+
+type Soma = (x: number, y: number) => number
+
+interface SomaI {
+    (x: number, y: number): number
+}
+
+const somar: Soma = (x, y) => x + y
+console.log(somar(5, 6))
