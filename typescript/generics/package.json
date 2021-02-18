@@ -1,0 +1,16 @@
+{
+  "name": "classes",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn ./src/index.ts"
+  },
+  "keywords": [],
+  "author": "Daniel Tapias Morales <tapmorales@gmail.com> (tapmorales.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.1.3"
+  }
+}
