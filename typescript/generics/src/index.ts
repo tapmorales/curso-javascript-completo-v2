@@ -23,3 +23,4 @@ somaOuConcatenaG("1", "2")
 // somaOuConcatenaG(1, "2")         ERRO
 // somaOuConcatenaG("1", 2)         ERRO
 // somaOuConcatenaG(false, true)    ERRO
+
