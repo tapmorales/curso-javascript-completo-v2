@@ -1,0 +1,76 @@
+html {
+  height: 100%;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+body {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(170, 70, 252, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+main {
+  width: 620px;
+  background: white;
+  padding: 2em;
+  box-sizing: border-box;
+  box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.63);
+}
+
+.game {
+  margin-left: auto;
+  margin-right: auto;
+  perspective: 500px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  height: 420px;
+  gap: 20px;    
+}
+
+.card{
+  border-radius: 6px;
+  transition: transform .2s;
+  position: relative;
+  border: solid 3px #a02f25;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 0 5px 7px -5px rgba(0,0,0,.5);
+}
+
+.card img{
+  border-radius: 6px;
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  backface-visibility: hidden;  
+}
+.card-front{
+  transform: rotateY(180deg);
+}
+.card.show {
+  transform: rotateY(180deg);
+}
+
+
