@@ -1,3 +1,4 @@
+import { PubSub, Output } from './PubSub'
 
 const testEvent1 = document.querySelector("#testEvent") as HTMLElement
 const testEvent2 = document.querySelector("#testEvent2") as HTMLElement
@@ -36,3 +37,27 @@ testEvent3?.addEventListener("customClick", function (e) {
 })
 
 // document.addEventListener("click", eventFire)
+
+/* PubSub Design Pattern */
+const pubsub = document.getElementById("pubsub")
+
+function teste(data?: Output) {
+    console.log("teste")
+    console.log(data?.type)
+
+}
+
+PubSub.subscribe("EventTest1", teste)
+
+PubSub.subscribe("EventTest2", teste)
+PubSub.subscribe("EventTest3", teste)
+
+
+PubSub.unsubscribe("EventTest1", teste)
+
+
+console.log(PubSub.subscribers)
+
+
+PubSub.publish("EventTest3", 20)
+PubSub.publish("EventTest", "ola mundo do pubsub")
