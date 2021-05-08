@@ -39,11 +39,12 @@ testEvent3?.addEventListener("customClick", function (e) {
 // document.addEventListener("click", eventFire)
 
 /* PubSub Design Pattern */
-const pubsub = document.getElementById("pubsub")
+const pubsub = document.getElementById("pubsub") as HTMLElement
 
 function teste(data?: Output) {
     console.log("teste")
     console.log(data?.type)
+    pubsub.textContent = ` data: ${data?.data} - type: ${data?.type}`
 
 }
 
@@ -58,6 +59,10 @@ PubSub.unsubscribe("EventTest1", teste)
 
 console.log(PubSub.subscribers)
 
+
+setTimeout(() => {
+    PubSub.publish("EventTest3", "publish com timeout")
+}, 3000)
 
 PubSub.publish("EventTest3", 20)
 PubSub.publish("EventTest", "ola mundo do pubsub")
