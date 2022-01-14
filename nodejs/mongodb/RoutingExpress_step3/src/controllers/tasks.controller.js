@@ -29,6 +29,7 @@ exports.post = async (req, res) => {
     // tasks.push(newTask)
     try {
         const data = await repository.post(newTask)
+        console.log(data)
         res.status(201).send(data)
     } catch (e) {
         res.status(500).send({ message: "erros 500", err: e })

@@ -29,6 +29,7 @@ exports.post = async (req, res) => {
     // tasks.push(newTask)
     try {
         const data = await repository.post(newTask)
+        console.log(data)
         res.status(201).send(data)
     } catch (e) {
         res.status(500).send({ message: "erros 500", err: e })
@@ -39,7 +40,7 @@ exports.post = async (req, res) => {
 exports.getById = async (req, res) => {
     // res.send(tasks.find(task => task.id === parseInt(req.params.id)))
     try {
-        const data = await repository.get(parseInt(req.params.id))
+        const data = await repository.get(req.params.id)
         if (data) {
             res.status(200).send(data)
         } else {
@@ -61,7 +62,7 @@ exports.put = async (req, res) => {
         completed,
         createdAt,
         updatedAt,
-        id: parseInt(req.params.id),
+        // id: req.params.id,
         userId
     }
 
