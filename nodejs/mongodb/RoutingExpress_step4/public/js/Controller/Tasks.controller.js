@@ -33,9 +33,9 @@ export default class TasksController {
         )
     }
     toggleDone(id) {
-        const task = this.service.getById(parseInt(id))
+        const task = this.service.getById(id)
         const { completed } = task
-        this.update({ completed: !completed, id: parseInt(id) }, userId)
+        this.update({ completed: !completed, _id: id }, userId)
     }
 
     getTasks() {

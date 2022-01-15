@@ -1,6 +1,6 @@
 import { createFetch } from './../createFetch.js'
 import { Task } from './../Model/Task.model.js'
-import { urlUsers, urlTasks } from './../config.js'
+import { urlTasks } from './../config.js'
 
 export default class TasksService {
     constructor() {
@@ -8,7 +8,7 @@ export default class TasksService {
     }
 
     add(task, cb, error, userId) {
-        createFetch("POST", `${urlUsers}/${userId}/tasks`, JSON.stringify(task))
+        createFetch("POST", `${urlTasks}`, JSON.stringify(task))
             .then(() => this.getTasks(userId))
             .then(() => cb())
             .catch(err => error(err))
@@ -20,14 +20,14 @@ export default class TasksService {
 
         const fn = (arrTasks) => {
             this.tasks = arrTasks.map(task => {
-                const { title, completed, createdAt, updatedAt, id } = task
-                return new Task(title, completed, createdAt, updatedAt, id)
+                const { title, completed, createdAt, updatedAt, _id } = task
+                return new Task(title, completed, createdAt, updatedAt, _id)
             })
 
             if (typeof sucess === "function") sucess(this.tasks)
             return this.tasks
         }
-        return createFetch("GET", `${urlUsers}/${userId}/tasks`)
+        return createFetch("GET", `${urlTasks}`)
             .then(response => {
                 return fn(response)
             })
@@ -49,13 +49,13 @@ export default class TasksService {
 
     update(task, cb, error, userId) {
         task.updatedAt = Date.now()
-        createFetch("PATCH", `${urlTasks}/${task.id}`, JSON.stringify(task))
+        createFetch("PATCH", `${urlTasks}/${task._id}`, JSON.stringify(task))
             .then(() => this.getTasks(userId))
             .then(() => cb())
             .catch(err => error(err.message))
     }
 
     getById(id) {
-        return this.tasks.find(task => parseInt(task.id) === id)
+        return this.tasks.find(task => task.id === id)
     }
 }

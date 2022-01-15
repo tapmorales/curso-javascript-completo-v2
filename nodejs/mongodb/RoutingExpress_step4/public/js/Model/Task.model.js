@@ -1,5 +1,6 @@
-export function Task(title, completed, createdAt, updatedAt, id) {
+import { userId } from './../config.js'
 
+export function Task(title, completed, createdAt, updatedAt, id) {
     if (!title) {
         throw new Error("Task need a required parameter: title")
     }
@@ -11,5 +12,6 @@ export function Task(title, completed, createdAt, updatedAt, id) {
     this.toggleDone = function () {
         this.completed = !this.completed
     }
-    this.id = id || null
+    this._id = id || null
+    this.userId = userId
 }

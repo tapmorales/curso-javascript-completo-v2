@@ -5,9 +5,9 @@ function generateLiTask(obj) {
     const checkButton = document.createElement("button")
     const editButton = document.createElement("i")
     const deleteButton = document.createElement("i")
-
+    console.log(obj)
     li.className = "todo-item"
-    li.setAttribute("data-id", obj.id)
+    li.setAttribute("data-id", obj._id)
 
     checkButton.className = "button-check"
     checkButton.innerHTML = `
