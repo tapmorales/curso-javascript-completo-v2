@@ -56,6 +56,24 @@ export default class TasksService {
     }
 
     getById(id) {
-        return this.tasks.find(task => task.id === id)
+        // return this.tasks.find(task => task.id === id)
+
+        const fn = (task) => {
+            const { title, completed, createdAt, updatedAt, _id } = task
+            const _task = new Task(title, completed, createdAt, updatedAt, _id)
+            return _task
+        }
+
+        return createFetch("GET", `${urlTasks}/${id}`)
+            .then(response => {
+                return fn(response)
+            })
+            .catch(erro => {
+                if (typeof error === "function") {
+                    return error(erro.message)
+                }
+                throw Error(erro.message)
+
+            })
     }
 }

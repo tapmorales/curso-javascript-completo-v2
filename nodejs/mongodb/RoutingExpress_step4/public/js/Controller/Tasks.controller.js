@@ -32,10 +32,13 @@ export default class TasksController {
             userId
         )
     }
-    toggleDone(id) {
-        const task = this.service.getById(id)
+    async toggleDone(id) {
+        // código anterior
+        // const task = this.service.getById(id)
+        // toggleDone agora é async por conta desse await abaixo
+        const task = await this.service.getById(id)
         const { completed } = task
-        this.update({ completed: !completed, _id: id }, userId)
+        return this.update({ completed: !completed, _id: id }, userId)
     }
 
     getTasks() {
