@@ -7,38 +7,38 @@
     letter-spacing: inherit;
 }*/
 
-body{
+body {
     font-family: 'Open Sans', sans-serif;
-    sans-serif;
-    letter-spacing: .1rem;   
-        display: flex;
+    letter-spacing: .1rem;
+    display: flex;
 }
 
-body,html{
-    height:100%;
+body,
+html {
+    height: 100%;
     margin: 0;
 }
 
-.formCadastro__app{
-   background-color:rgb(247, 247, 247);
-   border-radius: 3px;
-   box-shadow: 2px 2px 15px rgba(77, 77, 77, .5);
-   min-width:12.5em;
-   margin: auto;
+.formCadastro__app {
+    background-color: rgb(247, 247, 247);
+    border-radius: 3px;
+    box-shadow: 2px 2px 15px rgba(77, 77, 77, .5);
+    min-width: 12.5em;
+    margin: auto;
 }
 
-.formCadastro__container{
-    background-color:#726a95;
+.formCadastro__container {
+    background-color: #726a95;
     padding: 2rem 1rem;
     border-radius: 3px 3px 0 0;
 }
 
-.formCadastro__container >.heading{
-    font-size:2rem;
+.formCadastro__container>.heading {
+    font-size: 2rem;
     margin-top: 0;
 }
 
-.formCadastro label[for]{
+.formCadastro label[for] {
     padding: .5rem 0;
     width: 100%;
     display: block;
@@ -47,7 +47,7 @@ body,html{
     margin-top: 1rem;
 }
 
-.formCadastro label{
+.formCadastro label {
     padding: .5rem 0;
     width: 100%;
     display: block;
@@ -61,7 +61,7 @@ input[type="text"] {
     width: 100%;
     display: block;
     box-sizing: border-box;
-    
+
 }
 
 input[type="submit"] {
@@ -81,7 +81,7 @@ input[type="submit"]:hover {
 
 
 
-textarea{
+textarea {
     padding: .5rem;
     width: 100%;
     display: block;
@@ -89,16 +89,16 @@ textarea{
 
 }
 
-.contador{
+.contador {
     text-align: right;
     font-size: .75rem;
 }
 
-.formCadastro__container{  
-    padding:1rem;  
+.formCadastro__container {
+    padding: 1rem;
 }
 
-#feedbackMessage{
+#feedbackMessage {
     position: fixed;
     left: 1rem;
     top: 1rem;
@@ -114,17 +114,22 @@ textarea{
     transform: translateY(calc(-2rem - 100%));
     transition: transform .3s;
 }
-#feedbackMessage p{
+
+#feedbackMessage p {
     margin: .5em 0;
 }
-#feedbackMessage button{
+
+#feedbackMessage button {
     background-color: transparent;
     border: none;
     font-size: 1.25em;
     color: #652f2f;
 }
 
-#feedbackMessage.show{
-    transform: translateY(0px);
+#feedbackMessage button:focus {
+    border: 1px solid red;
 }
 
+#feedbackMessage.show {
+    transform: translateY(0px);
+}
