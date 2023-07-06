@@ -11,7 +11,7 @@ function quantoFaltaPara(m, d) {
     const dataNiver = new Date(anoAtual, m - 1, d)
 
     const dataAtualTS = +dataAtual
-    const dataNiverTS = +dataNiver
+    let dataNiverTS = +dataNiver
 
     if (dataNiverTS < dataAtualTS) {
         dataNiver.setFullYear(++anoAtual)
